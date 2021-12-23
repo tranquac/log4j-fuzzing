@@ -212,7 +212,7 @@ func ScanAPIServices(c *fiber.Ctx) error {
 	}
 
 	request(d.Domain, headers, payloads2)
-	time.Sleep(time.Second * 2)
+	time.Sleep(time.Second * 5)
 	checkVuln := checkVulnFromCallBack(num)
 
 	test := cnnfirebase.Log4j{
