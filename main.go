@@ -17,10 +17,12 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/gofiber/fiber/v2"
 )
 
 var total_requests = 1
-
+var cb string
 var httpClient = &http.Client{
 	Transport: transport,
 }
@@ -83,63 +85,63 @@ func checkVulnFromCallBack(num int) string {
 }
 
 func main() {
-	var d string
-	var headers []string
-	var payloads []string
-	var cb string
-	var err error
-	flag.StringVar(&d, "d", "", "Set domain/IP")
+	// var d string
+	// // var headers []string
+	// // var payloads []string
+	// // var err error
+	// flag.StringVar(&d, "d", "", "Set domain/IP")
 	flag.StringVar(&cb, "cb", "", "Set callback server")
 	flag.Parse()
 
-	f := flag.NFlag()
-	if f != 2 {
-		fmt.Printf("Usage: log4j-fuzzing -d domain/IP -cb interact-server\n")
-		fmt.Printf("Example: log4j-fuzzing -d http://google.com -cb interact-server\n")
-		fmt.Printf("Example1: log4j-fuzzing -d \"http://google.com:8000\" -cb interact-server\n")
-		fmt.Printf("Using quote if have port")
-		return
-	}
+	// f := flag.NFlag()
+	// if f != 2 {
+	// 	fmt.Printf("Usage: log4j-fuzzing -d domain/IP -cb interact-server\n")
+	// 	fmt.Printf("Example: log4j-fuzzing -d http://google.com -cb interact-server\n")
+	// 	fmt.Printf("Example1: log4j-fuzzing -d \"http://google.com:8000\" -cb interact-server\n")
+	// 	fmt.Printf("Using quote if have port")
+	// 	return
+	// }
 
-	if !strings.Contains(d, "http://") && !strings.Contains(d, "https://") {
-		fmt.Printf("Must include http:// and https:// in domains")
-		return
-	}
-	//headers INPUT from url
-	headers, err = UrlToLines("https://raw.githubusercontent.com/tranquac/log4j-fuzzing/master/headers2.txt")
-	if err != nil {
-		fmt.Print(err)
-	}
-	//payloads input from url
-	payloads, err = UrlToLines("https://raw.githubusercontent.com/tranquac/log4j-fuzzing/master/payloads2.txt")
-	if err != nil {
-		fmt.Print(err)
-	}
+	// if !strings.Contains(d, "http://") && !strings.Contains(d, "https://") {
+	// 	fmt.Printf("Must include http:// and https:// in domains")
+	// 	return
+	// }
+	// //headers INPUT from url
+	// headers, err = UrlToLines("https://raw.githubusercontent.com/tranquac/log4j-fuzzing/master/headers2.txt")
+	// if err != nil {
+	// 	fmt.Print(err)
+	// }
+	// //payloads input from url
+	// payloads, err = UrlToLines("https://raw.githubusercontent.com/tranquac/log4j-fuzzing/master/payloads2.txt")
+	// if err != nil {
+	// 	fmt.Print(err)
+	// }
 
-	var payloads2 []string
-	num := randomNumb()
-	randN := strconv.Itoa(num)
-	hostname := randN + "." + cb
-	for _, payload := range payloads {
-		payload := strings.Replace(payload, "hostname", hostname, -1)
-		payloads2 = append(payloads2, payload)
-	}
+	// var payloads2 []string
+	// num := randomNumb()
+	// randN := strconv.Itoa(num)
+	// hostname := randN + "." + cb
+	// for _, payload := range payloads {
+	// 	payload := strings.Replace(payload, "hostname", hostname, -1)
+	// 	payloads2 = append(payloads2, payload)
+	// }
 
-	request(d, headers, payloads2)
-	time.Sleep(time.Second * 2)
-	checkVuln := checkVulnFromCallBack(num)
+	// request(d, headers, payloads2)
+	// time.Sleep(time.Second * 2)
+	// checkVuln := checkVulnFromCallBack(num)
 
-	test := cnnfirebase.Log4j{
-		Domain: d,
-		Result: checkVuln,
-		Time:   time.Now(),
-	}
+	// test := cnnfirebase.Log4j{
+	// 	Domain: d,
+	// 	Result: checkVuln,
+	// 	Time:   time.Now(),
+	// }
 
-	cnnfirebase.InsertData(&test)
-	abc := cnnfirebase.GetData()
-	for _, v := range abc {
-		fmt.Println(string(v))
-	}
+	// cnnfirebase.InsertData(&test)
+	// abc := cnnfirebase.GetData()
+	// for _, v := range abc {
+	// 	fmt.Println(string(v))
+	// }
+	SetupRout()
 }
 
 func request(urls string, headers []string, payloads []string) {
@@ -173,4 +175,59 @@ func request(urls string, headers []string, payloads []string) {
 
 	}
 
+}
+
+func SetupRout() {
+	app := fiber.New()
+	app.Post("/api/scan", ScanAPIServices)
+	app.Get("/api/result", GetLastResult)
+	app.Listen(":8081")
+
+}
+
+func ScanAPIServices(c *fiber.Ctx) error {
+	var d string
+	c.BodyParser(&d)
+	headers, err := UrlToLines("https://raw.githubusercontent.com/tranquac/log4j-fuzzing/master/headers2.txt")
+	if err != nil {
+		fmt.Print(err)
+	}
+	//payloads input from url
+	payloads, err := UrlToLines("https://raw.githubusercontent.com/tranquac/log4j-fuzzing/master/payloads2.txt")
+	if err != nil {
+		fmt.Print(err)
+	}
+	var payloads2 []string
+	num := randomNumb()
+	randN := strconv.Itoa(num)
+	hostname := randN + "." + cb
+	for _, payload := range payloads {
+		payload := strings.Replace(payload, "hostname", hostname, -1)
+		payloads2 = append(payloads2, payload)
+	}
+
+	request(d, headers, payloads2)
+	time.Sleep(time.Second * 2)
+	checkVuln := checkVulnFromCallBack(num)
+
+	test := cnnfirebase.Log4j{
+		Domain: d,
+		Result: checkVuln,
+		Time:   time.Now(),
+	}
+
+	cnnfirebase.InsertData(&test)
+	abc := cnnfirebase.GetData()
+	for _, v := range abc {
+		fmt.Println(string(v))
+	}
+	return c.JSON(test)
+}
+
+func GetLastResult(c *fiber.Ctx) error {
+	var data []string
+	for _, k := range cnnfirebase.GetData() {
+		data = append(data, string(k))
+	}
+	return c.JSON(data)
 }
