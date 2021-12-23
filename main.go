@@ -75,6 +75,7 @@ func IsExist(str, filepath string) bool {
 }
 
 func checkVulnFromCallBack(num int) string {
+	fmt.Printf(strconv.Itoa(num))
 	if IsExist(strconv.Itoa(num), "/root/log-log4j/log-log4j-fuzzing.txt") {
 		return "vulnable"
 	}
