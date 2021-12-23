@@ -230,9 +230,6 @@ func ScanAPIServices(c *fiber.Ctx) error {
 }
 
 func GetLastResult(c *fiber.Ctx) error {
-	var data []string
-	for _, k := range cnnfirebase.GetData() {
-		data = append(data, string(k))
-	}
-	return c.JSON(data)
+
+	return c.JSON(cnnfirebase.GetData())
 }
