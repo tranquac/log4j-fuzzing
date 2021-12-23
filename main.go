@@ -2,18 +2,18 @@ package main
 
 import (
 	"bufio"
-	"bytes"
 	"crypto/tls"
 	"flag"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"log"
 	cnnfirebase "log4j-fuzzing/firebase"
 	"math/rand"
 	"net"
 	"net/http"
 	"net/http/httputil"
-	"os/exec"
+	"regexp"
 	"strconv"
 	"strings"
 	"time"
@@ -61,19 +61,24 @@ func randomNumb() int {
 	return rand.Intn(10000000000)
 }
 
-func checkVulnFromCallBack(num int) string {
-	var stdout bytes.Buffer
-	cmd := exec.Command("grep ", strconv.Itoa(num), " /root/log-log4j/log-log4j-fuzzing.txt")
-	cmd.Stdout = &stdout
-	err := cmd.Run()
-
+func IsExist(str, filepath string) bool {
+	b, err := ioutil.ReadFile(filepath)
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
-	if stdout.String() != "" {
-		return "unvulnable"
+
+	isExist, err := regexp.Match(str, b)
+	if err != nil {
+		panic(err)
 	}
-	return "vulnable"
+	return isExist
+}
+
+func checkVulnFromCallBack(num int) string {
+	if IsExist(strconv.Itoa(num), "/root/log-log4j/log-log4j-fuzzing.txt") {
+		return "vulnable"
+	}
+	return "unvulnable"
 }
 
 func main() {

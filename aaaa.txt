@@ -1,0 +1,611 @@
+nmirnk55blk0c8ndutyyyyyyn.interact.sh. IN       A
+
+;; ANSWER SECTION:
+c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  3600    IN      A       46.101.25.250
+
+;; AUTHORITY SECTION:
+c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  3600    IN      NS      ns1.interact.sh.
+c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  3600    IN      NS      ns2.interact.sh.
+
+;; ADDITIONAL SECTION:
+ns1.interact.sh.        3600    IN      A       46.101.25.250
+ns2.interact.sh.        3600    IN      A       46.101.25.250
+
+
+[7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn] Received DNS interaction (A) from 162.158.176.22 at 2021-12-23 08:57:15
+-----------
+DNS Request
+-----------
+
+;; opcode: QUERY, status: NOERROR, id: 39435
+;; flags:; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.      IN       A
+
+;; ADDITIONAL SECTION:
+
+;; OPT PSEUDOSECTION:
+; EDNS: version 0; flags: do; udp: 1452
+
+
+------------
+DNS Response
+------------
+
+;; opcode: QUERY, status: NOERROR, id: 39435
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.      IN       A
+
+;; ANSWER SECTION:
+7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.       3600    IN      A       46.101.25.250
+
+;; AUTHORITY SECTION:
+7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.       3600    IN      NS      ns1.interact.sh.
+7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.       3600    IN      NS      ns2.interact.sh.
+
+;; ADDITIONAL SECTION:
+ns1.interact.sh.        3600    IN      A       46.101.25.250
+ns2.interact.sh.        3600    IN      A       46.101.25.250
+
+
+[${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn] Received DNS interaction (A) from 172.253.6.1 at 2021-12-23 08:57:15
+-----------
+DNS Request
+-----------
+
+;; opcode: QUERY, status: NOERROR, id: 50279
+;; flags: cd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  IN       A
+
+
+------------
+DNS Response
+------------
+
+;; opcode: QUERY, status: NOERROR, id: 50279
+;; flags: qr aa cd; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  IN       A
+
+;; ANSWER SECTION:
+${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.   3600    IN      A       46.101.25.250
+
+;; AUTHORITY SECTION:
+${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.   3600    IN      NS      ns1.interact.sh.
+${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.   3600    IN      NS      ns2.interact.sh.
+
+;; ADDITIONAL SECTION:
+ns1.interact.sh.        3600    IN      A       46.101.25.250
+ns2.interact.sh.        3600    IN      A       46.101.25.250
+
+
+[c723jgu1nmirnk55blk0c8ndutyyyyyyn] Received DNS interaction (A) from 108.162.223.167 at 2021-12-23 08:57:15
+-----------
+DNS Request
+-----------
+
+;; opcode: QUERY, status: NOERROR, id: 5774
+;; flags:; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh. IN       A
+
+;; ADDITIONAL SECTION:
+
+;; OPT PSEUDOSECTION:
+; EDNS: version 0; flags: do; udp: 1452
+
+
+------------
+DNS Response
+------------
+
+;; opcode: QUERY, status: NOERROR, id: 5774
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh. IN       A
+
+;; ANSWER SECTION:
+c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  3600    IN      A       46.101.25.250
+
+;; AUTHORITY SECTION:
+c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  3600    IN      NS      ns1.interact.sh.
+c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  3600    IN      NS      ns2.interact.sh.
+
+;; ADDITIONAL SECTION:
+ns1.interact.sh.        3600    IN      A       46.101.25.250
+ns2.interact.sh.        3600    IN      A       46.101.25.250
+
+
+[${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn] Received DNS interaction (A) from 108.162.223.167 at 2021-12-23 08:57:16
+-----------
+DNS Request
+-----------
+
+;; opcode: QUERY, status: NOERROR, id: 45615
+;; flags:; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  IN       A
+
+;; ADDITIONAL SECTION:
+
+;; OPT PSEUDOSECTION:
+; EDNS: version 0; flags: do; udp: 1452
+
+
+------------
+DNS Response
+------------
+
+;; opcode: QUERY, status: NOERROR, id: 45615
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  IN       A
+
+;; ANSWER SECTION:
+${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.   3600    IN      A       46.101.25.250
+
+;; AUTHORITY SECTION:
+${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.   3600    IN      NS      ns1.interact.sh.
+${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.   3600    IN      NS      ns2.interact.sh.
+
+;; ADDITIONAL SECTION:
+ns1.interact.sh.        3600    IN      A       46.101.25.250
+ns2.interact.sh.        3600    IN      A       46.101.25.250
+
+
+[aeutbj.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn] Received DNS interaction (A) from 172.253.4.2 at 2021-12-23 08:57:18
+-----------
+DNS Request
+-----------
+
+;; opcode: QUERY, status: NOERROR, id: 56022
+;; flags: cd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;aeutbj.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.       IN       A
+
+
+------------
+DNS Response
+------------
+
+;; opcode: QUERY, status: NOERROR, id: 56022
+;; flags: qr aa cd; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;aeutbj.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.       IN       A
+
+;; ANSWER SECTION:
+aeutbj.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.        3600    IN      A       46.101.25.250
+
+;; AUTHORITY SECTION:
+aeutbj.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.        3600    IN      NS      ns1.interact.sh.
+aeutbj.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.        3600    IN      NS      ns2.interact.sh.
+
+;; ADDITIONAL SECTION:
+ns1.interact.sh.        3600    IN      A       46.101.25.250
+ns2.interact.sh.        3600    IN      A       46.101.25.250
+
+
+[c723jgu1nmirnk55blk0c8ndutyyyyyyn] Received DNS interaction (A) from 108.162.223.167 at 2021-12-23 08:57:18
+-----------
+DNS Request
+-----------
+
+;; opcode: QUERY, status: NOERROR, id: 33341
+;; flags:; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh. IN       A
+
+;; ADDITIONAL SECTION:
+
+;; OPT PSEUDOSECTION:
+; EDNS: version 0; flags: do; udp: 1452
+
+
+------------
+DNS Response
+------------
+
+;; opcode: QUERY, status: NOERROR, id: 33341
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh. IN       A
+
+;; ANSWER SECTION:
+c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  3600    IN      A       46.101.25.250
+
+;; AUTHORITY SECTION:
+c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  3600    IN      NS      ns1.interact.sh.
+c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  3600    IN      NS      ns2.interact.sh.
+
+;; ADDITIONAL SECTION:
+ns1.interact.sh.        3600    IN      A       46.101.25.250
+ns2.interact.sh.        3600    IN      A       46.101.25.250
+
+
+[aeutbj.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn] Received DNS interaction (A) from 108.162.223.167 at 2021-12-23 08:57:18
+-----------
+DNS Request
+-----------
+
+;; opcode: QUERY, status: NOERROR, id: 1683
+;; flags:; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;aeutbj.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.       IN       A
+
+;; ADDITIONAL SECTION:
+
+;; OPT PSEUDOSECTION:
+; EDNS: version 0; flags: do; udp: 1452
+
+
+------------
+DNS Response
+------------
+
+;; opcode: QUERY, status: NOERROR, id: 1683
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;aeutbj.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.       IN       A
+
+;; ANSWER SECTION:
+aeutbj.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.        3600    IN      A       46.101.25.250
+
+;; AUTHORITY SECTION:
+aeutbj.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.        3600    IN      NS      ns1.interact.sh.
+aeutbj.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.        3600    IN      NS      ns2.interact.sh.
+
+;; ADDITIONAL SECTION:
+ns1.interact.sh.        3600    IN      A       46.101.25.250
+ns2.interact.sh.        3600    IN      A       46.101.25.250
+
+
+[1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn] Received DNS interaction (A) from 172.253.237.2 at 2021-12-23 08:57:20
+-----------
+DNS Request
+-----------
+
+;; opcode: QUERY, status: NOERROR, id: 60272
+;; flags: cd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.    IN       A
+
+
+------------
+DNS Response
+------------
+
+;; opcode: QUERY, status: NOERROR, id: 60272
+;; flags: qr aa cd; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.    IN       A
+
+;; ANSWER SECTION:
+1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.     3600    IN      A       46.101.25.250
+
+;; AUTHORITY SECTION:
+1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.     3600    IN      NS      ns1.interact.sh.
+1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.     3600    IN      NS      ns2.interact.sh.
+
+;; ADDITIONAL SECTION:
+ns1.interact.sh.        3600    IN      A       46.101.25.250
+ns2.interact.sh.        3600    IN      A       46.101.25.250
+
+
+[c723jgu1nmirnk55blk0c8ndutyyyyyyn] Received DNS interaction (A) from 162.158.176.23 at 2021-12-23 08:57:20
+-----------
+DNS Request
+-----------
+
+;; opcode: QUERY, status: NOERROR, id: 14795
+;; flags:; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh. IN       A
+
+;; ADDITIONAL SECTION:
+
+;; OPT PSEUDOSECTION:
+; EDNS: version 0; flags: do; udp: 1452
+
+
+------------
+DNS Response
+------------
+
+;; opcode: QUERY, status: NOERROR, id: 14795
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh. IN       A
+
+;; ANSWER SECTION:
+c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  3600    IN      A       46.101.25.250
+
+;; AUTHORITY SECTION:
+c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  3600    IN      NS      ns1.interact.sh.
+c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  3600    IN      NS      ns2.interact.sh.
+
+;; ADDITIONAL SECTION:
+ns1.interact.sh.        3600    IN      A       46.101.25.250
+ns2.interact.sh.        3600    IN      A       46.101.25.250
+
+
+[1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn] Received DNS interaction (A) from 162.158.176.23 at 2021-12-23 08:57:20
+-----------
+DNS Request
+-----------
+
+;; opcode: QUERY, status: NOERROR, id: 60846
+;; flags:; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.    IN       A
+
+;; ADDITIONAL SECTION:
+
+;; OPT PSEUDOSECTION:
+; EDNS: version 0; flags: do; udp: 1452
+
+
+------------
+DNS Response
+------------
+
+;; opcode: QUERY, status: NOERROR, id: 60846
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.    IN       A
+
+;; ANSWER SECTION:
+1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.     3600    IN      A       46.101.25.250
+
+;; AUTHORITY SECTION:
+1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.     3600    IN      NS      ns1.interact.sh.
+1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.     3600    IN      NS      ns2.interact.sh.
+
+;; ADDITIONAL SECTION:
+ns1.interact.sh.        3600    IN      A       46.101.25.250
+ns2.interact.sh.        3600    IN      A       46.101.25.250
+
+
+[${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.\195\130\194\167\195\130\194\167.1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn] Received DNS interaction (A) from 74.125.41.65 at 2021-12-23 08:57:20
+-----------
+DNS Request
+-----------
+
+;; opcode: QUERY, status: NOERROR, id: 32920
+;; flags: cd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.\195\130\194\167\195\130\194\167.1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.       IN       A
+
+
+------------
+DNS Response
+------------
+
+;; opcode: QUERY, status: NOERROR, id: 32920
+;; flags: qr aa cd; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.\195\130\194\167\195\130\194\167.1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.       IN       A
+
+;; ANSWER SECTION:
+${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.\195\130\194\167\195\130\194\167.1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.        3600    IN      A       46.101.25.250
+
+;; AUTHORITY SECTION:
+${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.\195\130\194\167\195\130\194\167.1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.        3600    IN      NS      ns1.interact.sh.
+${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.\195\130\194\167\195\130\194\167.1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.        3600    IN      NS      ns2.interact.sh.
+
+;; ADDITIONAL SECTION:
+ns1.interact.sh.        3600    IN      A       46.101.25.250
+ns2.interact.sh.        3600    IN      A       46.101.25.250
+
+
+[c723jgu1nmirnk55blk0c8ndutyyyyyyn] Received DNS interaction (A) from 162.158.176.23 at 2021-12-23 08:57:20
+-----------
+DNS Request
+-----------
+
+;; opcode: QUERY, status: NOERROR, id: 22506
+;; flags:; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh. IN       A
+
+;; ADDITIONAL SECTION:
+
+;; OPT PSEUDOSECTION:
+; EDNS: version 0; flags: do; udp: 1452
+
+
+------------
+DNS Response
+------------
+
+;; opcode: QUERY, status: NOERROR, id: 22506
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh. IN       A
+
+;; ANSWER SECTION:
+c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  3600    IN      A       46.101.25.250
+
+;; AUTHORITY SECTION:
+c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  3600    IN      NS      ns1.interact.sh.
+c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  3600    IN      NS      ns2.interact.sh.
+
+;; ADDITIONAL SECTION:
+ns1.interact.sh.        3600    IN      A       46.101.25.250
+ns2.interact.sh.        3600    IN      A       46.101.25.250
+
+
+[${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.\195\130\194\167\195\130\194\167.1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn] Received DNS interaction (A) from 162.158.176.23 at 2021-12-23 08:57:21
+-----------
+DNS Request
+-----------
+
+;; opcode: QUERY, status: NOERROR, id: 59918
+;; flags:; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.\195\130\194\167\195\130\194\167.1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.       IN       A
+
+;; ADDITIONAL SECTION:
+
+;; OPT PSEUDOSECTION:
+; EDNS: version 0; flags: do; udp: 1452
+
+
+------------
+DNS Response
+------------
+
+;; opcode: QUERY, status: NOERROR, id: 59918
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.\195\130\194\167\195\130\194\167.1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.       IN       A
+
+;; ANSWER SECTION:
+${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.\195\130\194\167\195\130\194\167.1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.        3600    IN      A       46.101.25.250
+
+;; AUTHORITY SECTION:
+${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.\195\130\194\167\195\130\194\167.1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.        3600    IN      NS      ns1.interact.sh.
+${7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh}.\195\130\194\167\195\130\194\167.1.8.0_181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.        3600    IN      NS      ns2.interact.sh.
+
+;; ADDITIONAL SECTION:
+ns1.interact.sh.        3600    IN      A       46.101.25.250
+ns2.interact.sh.        3600    IN      A       46.101.25.250
+
+
+[c723jgu1nmirnk55blk0c8ndutyyyyyyn] Received DNS interaction (A) from 108.162.223.167 at 2021-12-23 08:57:21
+-----------
+DNS Request
+-----------
+
+;; opcode: QUERY, status: NOERROR, id: 39976
+;; flags:; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh. IN       A
+
+;; ADDITIONAL SECTION:
+
+;; OPT PSEUDOSECTION:
+; EDNS: version 0; flags: do; udp: 1452
+
+
+------------
+DNS Response
+------------
+
+;; opcode: QUERY, status: NOERROR, id: 39976
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh. IN       A
+
+;; ANSWER SECTION:
+c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  3600    IN      A       46.101.25.250
+
+;; AUTHORITY SECTION:
+c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  3600    IN      NS      ns1.interact.sh.
+c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.  3600    IN      NS      ns2.interact.sh.
+
+;; ADDITIONAL SECTION:
+ns1.interact.sh.        3600    IN      A       46.101.25.250
+ns2.interact.sh.        3600    IN      A       46.101.25.250
+
+
+[8u181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn] Received DNS interaction (A) from 74.125.41.65 at 2021-12-23 08:57:21
+-----------
+DNS Request
+-----------
+
+;; opcode: QUERY, status: NOERROR, id: 54893
+;; flags: cd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;8u181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.        IN       A
+
+
+------------
+DNS Response
+------------
+
+;; opcode: QUERY, status: NOERROR, id: 54893
+;; flags: qr aa cd; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;8u181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.        IN       A
+
+;; ANSWER SECTION:
+8u181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh. 3600    IN      A       46.101.25.250
+
+;; AUTHORITY SECTION:
+8u181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh. 3600    IN      NS      ns1.interact.sh.
+8u181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh. 3600    IN      NS      ns2.interact.sh.
+
+;; ADDITIONAL SECTION:
+ns1.interact.sh.        3600    IN      A       46.101.25.250
+ns2.interact.sh.        3600    IN      A       46.101.25.250
+
+
+[8u181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn] Received DNS interaction (A) from 108.162.223.167 at 2021-12-23 08:57:21
+-----------
+DNS Request
+-----------
+
+;; opcode: QUERY, status: NOERROR, id: 17117
+;; flags:; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;8u181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.        IN       A
+
+;; ADDITIONAL SECTION:
+
+;; OPT PSEUDOSECTION:
+; EDNS: version 0; flags: do; udp: 1452
+
+
+------------
+DNS Response
+------------
+
+;; opcode: QUERY, status: NOERROR, id: 17117
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;8u181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh.        IN       A
+
+;; ANSWER SECTION:
+8u181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh. 3600    IN      A       46.101.25.250
+
+;; AUTHORITY SECTION:
+8u181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh. 3600    IN      NS      ns1.interact.sh.
+8u181.7363590072.c723jgu1nmirnk55blk0c8ndutyyyyyyn.interact.sh. 3600    IN      NS      ns2.interact.sh.
+
+;; ADDITIONAL SECTION:
+ns1.interact.sh.        3600    IN      A       46.101.25.250
+ns2.interact.sh.        3600    IN      A       46.101.25.250
