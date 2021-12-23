@@ -37,10 +37,9 @@ func InsertData(test *Log4j) {
 	}
 }
 
-func GetData() [][]byte {
-	var data [][]byte = make([][]byte, 2)
+func GetData() []Log4j {
+	var data []Log4j
 	iter := client.Collection("log4j-fuzzing").OrderBy("Time", firestore.Desc).Limit(2).Documents(context.Background())
-	i := 0
 	for {
 		doc, err := iter.Next()
 		if err == iterator.Done {
@@ -51,8 +50,9 @@ func GetData() [][]byte {
 		}
 		d, _ := json.Marshal(doc.Data())
 		//fmt.Println(string(d))
-		data[i] = d
-		i++
+		var a Log4j
+		json.Unmarshal(d, &a)
+		data = append(data, a)
 	}
 	return data
 }

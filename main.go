@@ -224,7 +224,7 @@ func ScanAPIServices(c *fiber.Ctx) error {
 	cnnfirebase.InsertData(&test)
 	abc := cnnfirebase.GetData()
 	for _, v := range abc {
-		fmt.Println(string(v))
+		fmt.Println(v)
 	}
 	return c.JSON(test)
 }
