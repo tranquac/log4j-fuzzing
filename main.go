@@ -105,7 +105,7 @@ func main() {
 		return
 	}
 	//headers INPUT from url
-	headers, err = UrlToLines("https://raw.githubusercontent.com/tranquac/log4j-fuzzing/master/headers.txt")
+	headers, err = UrlToLines("https://raw.githubusercontent.com/tranquac/log4j-fuzzing/master/headers2.txt")
 	if err != nil {
 		fmt.Print(err)
 	}
