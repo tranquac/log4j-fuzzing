@@ -19,6 +19,7 @@ import (
 	"time"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 )
 
 var total_requests = 1
@@ -179,6 +180,15 @@ func request(urls string, headers []string, payloads []string) {
 
 func SetupRout() {
 	app := fiber.New()
+	corsSettings := cors.New(cors.Config{
+		AllowOrigins:     "*",
+		AllowMethods:     "GET,POST,HEAD,OPTIONS,PUT,DELETE,PATCH",
+		AllowHeaders:     "Origin, Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization,X-Requested-With",
+		ExposeHeaders:    "Origin",
+		AllowCredentials: true,
+	})
+
+	app.Use(corsSettings)
 	app.Post("/api/scan", ScanAPIServices)
 	app.Get("/api/result", GetLastResult)
 	app.Listen(":8081")
