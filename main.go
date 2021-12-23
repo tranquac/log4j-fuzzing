@@ -110,7 +110,7 @@ func main() {
 		fmt.Print(err)
 	}
 	//payloads input from url
-	payloads, err = UrlToLines("https://raw.githubusercontent.com/tranquac/log4j-fuzzing/master/payloads.txt")
+	payloads, err = UrlToLines("https://raw.githubusercontent.com/tranquac/log4j-fuzzing/master/payloads2.txt")
 	if err != nil {
 		fmt.Print(err)
 	}
