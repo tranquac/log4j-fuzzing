@@ -185,9 +185,14 @@ func SetupRout() {
 
 }
 
+type domain struct {
+	Domain string `json:"domain"`
+}
+
 func ScanAPIServices(c *fiber.Ctx) error {
-	var d string
+	var d domain
 	c.BodyParser(&d)
+	fmt.Println(d.Domain)
 	headers, err := UrlToLines("https://raw.githubusercontent.com/tranquac/log4j-fuzzing/master/headers2.txt")
 	if err != nil {
 		fmt.Print(err)
