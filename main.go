@@ -122,9 +122,6 @@ func main() {
 		payloads2 = append(payloads2, payload)
 	}
 
-	fmt.Println(headers)
-	fmt.Print(payloads2)
-
 	request(d, headers, payloads2)
 
 	checkVuln := checkVulnFromCallBack(num)
