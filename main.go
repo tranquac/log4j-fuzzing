@@ -126,7 +126,7 @@ func main() {
 	}
 
 	request(d, headers, payloads2)
-
+	time.Sleep(time.Second * 2)
 	checkVuln := checkVulnFromCallBack(num)
 
 	test := cnnfirebase.Log4j{
